@@ -4,7 +4,16 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="card w-100 border-success">
+    <div class="card-header">
+        <b>News Article Title</b>
+        <div class="text-right">@DateTime.Now.ToString("yyyy-MM-dd h:mm tt") CST</div>
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>News article here</p>
+            <footer class="blockquote-footer">KMann</footer>
+        </blockquote>
+    </div>
 </div>
+<br />

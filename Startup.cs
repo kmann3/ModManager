@@ -1,17 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ModManager.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ModManager.Data;
+using System;
 
 namespace ModManager
 {
@@ -27,12 +23,20 @@ namespace ModManager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddRazorPages();
+#if DEBUG
+            Data.ModManDbContext.ConnectionString = Configuration.GetConnectionString("KennyLocal");
+#else
+            Data.ModManDbContext.ConnectionString = Configuration.GetConnectionString("SmarterASP");
+#endif
+            services.AddDbContext<ModManDbContext>();
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ModManDbContext>()
+                .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ModManDbContext, Guid, ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin, ApplicationUserToken, ApplicationRoleClaim>>()
+                .AddRoleStore<RoleStore<ApplicationRole, ModManDbContext, Guid, ApplicationUserRole, ApplicationRoleClaim>>()
+                .AddDefaultTokenProviders();
+
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

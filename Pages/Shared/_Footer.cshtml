@@ -1,0 +1,17 @@
+﻿<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2020 - ModManager - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        @{
+            try
+            {
+                var assemblyLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                var fileVersion = System.Diagnostics.FileVersionInfo.GetVersionInfo(assemblyLocation).FileVersion;
+                <text>v&nbsp;</text>@fileVersion
+            }
+            catch
+            {
+                /* Usually this fails because of debug testing and won't happen live. */
+            }
+        }
+    </div>
+</footer>

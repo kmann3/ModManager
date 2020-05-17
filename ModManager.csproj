@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>aspnet-ModManager-44D0C31E-D33E-460E-9600-2B83B9E60CD8</UserSecretsId>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <FileVersion>2020.5.17.26</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="RT.Comb" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Game\" />
   </ItemGroup>
 
 </Project>
