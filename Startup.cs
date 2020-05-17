@@ -57,6 +57,8 @@ namespace ModManager
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseStatusCodePages();
+
             app.UseRouting();
 
             app.UseAuthentication();
