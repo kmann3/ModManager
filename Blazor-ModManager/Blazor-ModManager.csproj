@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-Blazor_ModManager-CFB32744-8646-4B55-AB45-D3C526B7C679</UserSecretsId>
     <RootNamespace>Blazor_ModManager</RootNamespace>
-    <FileVersion>2020.7.4.10</FileVersion>
+    <FileVersion>2020.7.4.16</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

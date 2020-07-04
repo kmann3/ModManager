@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor-ModManager", "Blazor-ModManager\Blazor-ModManager.csproj", "{ACF35580-4177-4EF0-9340-F3FDE95689BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Db", "Db\Db.csproj", "{FE0776FF-A7EF-4DE5-A0C7-A6B362870409}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Db", "Db\Db.csproj", "{FE0776FF-A7EF-4DE5-A0C7-A6B362870409}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
